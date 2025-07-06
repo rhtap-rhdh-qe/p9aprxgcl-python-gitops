@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: p9aprxgcl-python-gitops
+  description: This is GitOps manifest for p9aprxgcl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=p9aprxgcl-python
+    backstage.io/kubernetes-id: p9aprxgcl-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: p9aprxgcl-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:p9aprxgcl-python
